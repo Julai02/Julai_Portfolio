@@ -6,6 +6,27 @@
   <title>Holliness Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+<script>
+document.querySelector('form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const [name, email, message] = [
+    this[0].value,
+    this[1].value,
+    this[2].value
+  ];
+  const res = await fetch('http://localhost:3001/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, message })
+  });
+  if (res.ok) {
+    alert('Message sent!');
+    this.reset();
+  } else {
+    alert('Error sending message.');
+  }
+});
+</script>
 <body>
     <nav class="navbar">
   <ul>
@@ -21,7 +42,7 @@
   <header class="fade-in">
     <img src="holliness-pic.jpg" alt="Holliness profile photo" class="profile-pic">
     <h1>Holliness Julai Mwawasi </h1>
-    <p>Telecommunication Engineer | Creative Software Developer</p>
+    <p>Telecommunication Engineer | Aspiring Software Developer</p>
   </header>
 
   <section id="about" class="section fade-in">
@@ -35,7 +56,7 @@
 
   <section id="education" class="section fade-in">
     <h2>Education & CV</h2>
-    <p>PLP Academy Scholar – Software Development Track <br> National Superior School of Telecommunication and ICT, Oran Algeria - Bsc (Honours) in Telecommunication Engineering</p>
+    <p>PLP Academy Scholar – Software Development Track <br> National Superior School of Telecommunication and ICT, Oran Algeria - Bsc (Honours) in Telecommunication Engineering and ICT</p>
     <a href="Holliness Julai Mwawasi CV Eng 2025.pdf" download>Download My CV</a>
   </section>
 
@@ -80,6 +101,14 @@
         <li>
         <strong>Non Terrestrial Networks and Future Mobile Networks</strong>
         <a href="Non Terrestrial Networks and Future Mobile Networks by Holliness Julai Mwawasi.pdf">View Project</a> — End of undergraduate studies dissertation on the future of mobile networks.
+      </li>
+      <li>
+        <strong>Multiple web pages website:</strong>
+        <a href="https://julai02.github.io/pulse-of-innovation/about.html">View Project</a> — A project that show cases my ability and skills to conceptualize, build, and deploy a multi-page website that is responsive, interactive, and user-friendly.
+      </li>
+      <li>
+        <strong>Data exploration with Python</strong>
+        <a href="https://github.com/Julai02/Frameworks_Assignments">View Project</a> — A project that show cases my ability and skills to explore data using Python libraries such as Pandas, Matplotlib, and Seaborn. It also inlcudesa streamlit app.
       </li>
       <li>
         <strong>📡 Free Space Loss Calculator:</strong>
