@@ -6,27 +6,7 @@
   <title>Holliness Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<script>
-document.querySelector('form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const [name, email, message] = [
-    this[0].value,
-    this[1].value,
-    this[2].value
-  ];
-  const res = await fetch('http://localhost:3001/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email, message })
-  });
-  if (res.ok) {
-    alert('Message sent!');
-    this.reset();
-  } else {
-    alert('Error sending message.');
-  }
-});
-</script>
+
 <body>
     <nav class="navbar">
   <ul>
@@ -75,6 +55,8 @@ document.querySelector('form').addEventListener('submit', async function(e) {
   <h2>My Skills</h2>
   <ul class="skills-list">
     <li>Web Development</li>
+    <li>Database Management</li>
+    <li>Frameworks</li>
     <li>Radio Frequency</li>
     <li>Signal Processing</li>
     <li>LAN & VLAN</li>
@@ -126,12 +108,6 @@ document.querySelector('form').addEventListener('submit', async function(e) {
     <h2>Contact Me</h2>
     <a href="http://bit.ly/45Quptk" >LinkedIn</a>
     <a href="https://github.com/Julai02" >Github</a>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
     <p class="email">📧 mwawasijulai@gmail.com</p>
   </section>
 
